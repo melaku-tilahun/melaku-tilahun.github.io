@@ -3,43 +3,43 @@
    =================================== */
 
 :root {
-  /* Colors - Dark Theme with Vibrant Accents */
-  --color-bg-primary: #0a0a0f;
-  --color-bg-secondary: #13131a;
-  --color-bg-tertiary: #1a1a24;
+  /* Colors - Light Theme with Clean Aesthetics */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-tertiary: #f1f3f5;
   
-  /* Accent Colors - Vibrant Gradient */
-  --color-accent-primary: #6366f1;
-  --color-accent-secondary: #8b5cf6;
-  --color-accent-tertiary: #06A5C7;
+  /* Accent Colors - Simple and Professional */
+  --color-accent-primary: #06A5C7;
+  --color-accent-secondary: #0891b2;
+  --color-accent-tertiary: #0e7490;
   
   /* Text Colors */
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #cbd5e1;
-  --color-text-tertiary: #94a3b8;
-  --color-text-muted: #64748b;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a5568;
+  --color-text-tertiary: #718096;
+  --color-text-muted: #a0aec0;
   
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  /* Glassmorphism - Light Mode */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
   
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 50%, var(--color-accent-tertiary) 100%);
-  --gradient-overlay: linear-gradient(180deg, transparent 0%, var(--color-bg-primary) 100%);
+  /* Gradients - Subtle */
+  --gradient-primary: linear-gradient(135deg, #06A5C7 0%, #0891b2 100%);
+  --gradient-overlay: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.9) 100%);
   
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+  /* Shadows - Light Mode */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 40px rgba(6, 165, 199, 0.2);
   
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Space Grotesk', 'Inter', sans-serif;
   
-  /* Font Sizes */
+  /* Font Sizes - Simplified */
   --text-xs: 0.75rem;      /* 12px */
   --text-sm: 0.875rem;     /* 14px */
   --text-base: 1rem;       /* 16px */
@@ -48,10 +48,10 @@
   --text-2xl: 1.5rem;      /* 24px */
   --text-3xl: 1.875rem;    /* 30px */
   --text-4xl: 2.25rem;     /* 36px */
-  --text-5xl: 3rem;        /* 48px */
-  --text-6xl: 3.75rem;     /* 60px */
-  --text-7xl: 4.5rem;      /* 72px */
-  --text-8xl: 6rem;        /* 96px */
+  --text-5xl: 2.5rem;      /* 40px */
+  --text-6xl: 3rem;        /* 48px */
+  --text-7xl: 3.5rem;      /* 56px */
+  --text-8xl: 4rem;        /* 64px */
   
   /* Font Weights */
   --font-light: 300;
@@ -116,10 +116,10 @@
 /* Responsive Typography Adjustments */
 @media (max-width: 768px) {
   :root {
-    --text-5xl: 2.5rem;    /* 40px */
-    --text-6xl: 3rem;      /* 48px */
-    --text-7xl: 3.5rem;    /* 56px */
-    --text-8xl: 4rem;      /* 64px */
+    --text-5xl: 2rem;      /* 32px */
+    --text-6xl: 2.5rem;    /* 40px */
+    --text-7xl: 3rem;      /* 48px */
+    --text-8xl: 3.5rem;    /* 56px */
     --container-padding: var(--space-4);
   }
 }

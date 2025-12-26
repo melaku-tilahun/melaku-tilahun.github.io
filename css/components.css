@@ -37,10 +37,18 @@
   text-decoration: none;
   letter-spacing: -0.03em;
   transition: transform var(--transition-base);
+  display: flex;
+  align-items: center;
 }
 
 .nav-logo:hover {
   transform: scale(1.05);
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-logo span {

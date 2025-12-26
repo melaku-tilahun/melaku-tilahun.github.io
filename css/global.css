@@ -99,7 +99,7 @@ section {
   }
 }
 
-/* Grid Background Effect */
+/* Grid Background Effect - Light Mode */
 .grid-background {
   position: fixed;
   top: 0;
@@ -107,19 +107,19 @@ section {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   z-index: -2;
   pointer-events: none;
 }
 
-/* Gradient Orb Background */
+/* Gradient Orb Background - Light Mode */
 .gradient-orb {
   position: fixed;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.15;
+  opacity: 0.08;
   z-index: -1;
   pointer-events: none;
   animation: float 20s ease-in-out infinite;
@@ -136,7 +136,7 @@ section {
 .gradient-orb-2 {
   width: 500px;
   height: 500px;
-  background: var(--color-accent-tertiary);
+  background: var(--color-accent-secondary);
   bottom: -150px;
   left: -150px;
   animation-delay: -10s;

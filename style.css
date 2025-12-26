@@ -21,20 +21,21 @@ html {
 
 body {
     color: var(--black);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 h1, h2, h3, .logo {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Syne', sans-serif;
     text-transform: lowercase;
+    letter-spacing: -0.04em;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0 6rem;
 }
 
 /* --- GRID BACKGROUND --- */
@@ -47,23 +48,23 @@ h1, h2, h3, .logo {
     background-image: 
         linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
         linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-    background-size: 100px 100px;
+    background-size: 80px 80px;
     z-index: -2;
     pointer-events: none;
 }
 
 .liquid-bg {
     position: fixed;
-    bottom: -10%;
+    bottom: -5%;
     left: 0;
     width: 100%;
     z-index: -1;
     pointer-events: none;
+    opacity: 0.6;
 }
 
 .liquid-bg svg {
     width: 100%;
-    filter: drop-shadow(0 -10px 30px rgba(0,0,0,0.02));
 }
 
 /* --- NAVIGATION --- */
@@ -71,7 +72,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 100px;
+    height: 140px;
     z-index: 1000;
 }
 
@@ -83,11 +84,10 @@ nav {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 800;
     text-decoration: none;
     color: var(--black);
-    letter-spacing: -2px;
 }
 
 .logo span {
@@ -95,18 +95,23 @@ nav {
 }
 
 .menu-btn {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     background: var(--black);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: var(--transition);
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
 }
 
 .menu-icon {
-    width: 15px;
+    width: 18px;
     height: 2px;
     background: var(--white);
     position: relative;
@@ -115,7 +120,7 @@ nav {
 .menu-icon::before {
     content: '';
     position: absolute;
-    top: -5px;
+    top: -6px;
     width: 100%;
     height: 100%;
     background: var(--white);
@@ -126,53 +131,53 @@ nav {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 140px;
     position: relative;
 }
 
 .hero-main h1 {
-    font-size: 7.5rem;
+    font-size: 9.5rem;
     line-height: 0.85;
-    font-weight: 700;
-    letter-spacing: -5px;
-    margin-left: -5px;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    margin-left: -10px;
 }
 
 .light {
     color: var(--gray-mid);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .hero-action {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    margin-top: 4rem;
+    gap: 3rem;
+    margin-top: 5rem;
 }
 
 .cta-toggle {
-    width: 80px;
-    height: 45px;
-    border: 1px solid var(--black);
-    border-radius: 40px;
+    width: 100px;
+    height: 55px;
+    border: 1.5px solid var(--black);
+    border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5px;
+    padding: 0 6px;
     text-decoration: none;
     transition: var(--transition);
 }
 
 .cta-toggle .dot {
-    width: 33px;
-    height: 33px;
+    width: 41px;
+    height: 41px;
     background: var(--black);
     border-radius: 50%;
 }
 
 .cta-toggle .arrow {
-    margin-right: 10px;
-    font-size: 1.2rem;
+    margin-right: 15px;
+    font-size: 1.5rem;
 }
 
 .cta-toggle:hover {
@@ -186,202 +191,228 @@ nav {
 
 .hero-action p {
     font-weight: 600;
-    font-size: 1.1rem;
-    line-height: 1.1;
+    font-size: 1.2rem;
+    line-height: 1.2;
 }
 
 /* --- FACT CARDS --- */
 .fact-card {
     position: absolute;
     background: var(--white);
-    border: 1px solid var(--grid-line);
-    padding: 1.5rem;
-    border-radius: 12px;
-    max-width: 250px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    border: 1px solid var(--black);
+    padding: 2.5rem;
+    border-radius: 4px;
+    max-width: 320px;
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.02);
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     align-items: flex-start;
 }
 
 .card-num {
     background: var(--black);
     color: var(--white);
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 10px;
+    font-size: 0.9rem;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
     font-weight: 800;
+    flex-shrink: 0;
 }
 
 .card-text p {
-    font-size: 0.85rem;
-    color: var(--gray-dark);
+    font-size: 1.05rem;
+    color: var(--black);
     font-weight: 500;
+    line-height: 1.5;
 }
 
 .scroll-down {
     position: absolute;
-    bottom: 50px;
-    left: 4rem;
+    bottom: 60px;
+    left: 6rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-size: 0.9rem;
-    font-weight: 600;
+    gap: 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .arrow-down {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 /* --- MISSION --- */
 .mission {
-    padding: 15vw 0;
+    padding: 20vw 0;
 }
 
 .mission-wrapper {
     display: flex;
-    gap: 5vw;
+    gap: 6vw;
     align-items: flex-start;
 }
 
 .mission-label {
     background: var(--white);
-    border: 1px solid var(--black);
-    padding: 0.5rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 0.9rem;
+    border: 2px solid var(--black);
+    padding: 0.6rem 2rem;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 1rem;
     white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .mission-content p {
-    font-size: 2.5rem;
-    font-weight: 600;
-    line-height: 1.2;
-    max-width: 40ch;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    max-width: 35ch;
+    letter-spacing: -0.03em;
 }
 
 /* --- WORK --- */
 .work {
-    padding-bottom: 15vw;
+    padding-bottom: 20vw;
 }
 
 .section-tag {
-    font-family: 'Outfit';
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    opacity: 0.4;
+    font-family: 'Syne';
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    opacity: 0.3;
+    text-transform: lowercase;
 }
 
 .projects-list {
-    border-top: 1px solid var(--grid-line);
+    border-top: 1.5px solid var(--black);
 }
 
 .project-item {
-    border-bottom: 1px solid var(--grid-line);
-    padding: 3rem 0;
+    border-bottom: 1.5px solid var(--black);
+    padding: 5rem 0;
     display: flex;
-    gap: 4rem;
+    gap: 6rem;
+    transition: var(--transition);
+}
+
+.project-item:hover {
+    background: var(--gray-light);
 }
 
 .project-num {
-    font-family: 'Outfit';
+    font-family: 'Syne';
     font-weight: 800;
-    font-size: 1.5rem;
-    opacity: 0.2;
+    font-size: 2rem;
+    opacity: 0.15;
 }
 
 .project-detail h3 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
 }
 
 .project-detail p {
-    font-size: 1.2rem;
-    color: var(--gray-mid);
-    margin-bottom: 2rem;
-    max-width: 500px;
+    font-size: 1.4rem;
+    color: var(--black);
+    opacity: 0.6;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
 }
 
 .project-link {
     color: var(--black);
     text-decoration: none;
-    font-weight: 700;
-    border-bottom: 2px solid var(--black);
-    padding-bottom: 5px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-bottom: 3px solid var(--black);
+    padding-bottom: 8px;
     transition: var(--transition);
 }
 
 .project-link:hover {
-    color: var(--gray-mid);
-    border-color: var(--gray-mid);
+    padding-left: 20px;
 }
 
 /* --- TALK --- */
 .talk {
-    padding: 10vw 0;
+    padding: 15vw 0;
     background: var(--black);
     color: var(--white);
 }
 
 .talk h2 {
-    font-size: 6rem;
-    line-height: 0.9;
-    margin-bottom: 4rem;
+    font-size: 7.5rem;
+    line-height: 0.85;
+    margin-bottom: 5rem;
+    font-weight: 800;
 }
 
 .contact-links {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
 }
 
 .contact-links a {
     color: var(--white);
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 600;
-    opacity: 0.5;
+    font-size: 2rem;
+    font-weight: 700;
+    opacity: 0.4;
     transition: var(--transition);
 }
 
 .contact-links a:hover {
     opacity: 1;
+    transform: translateX(10px);
 }
 
 /* --- FOOTER --- */
 footer {
-    padding: 4rem 0;
+    padding: 6rem 0;
     background: var(--black);
     color: var(--white);
+}
+
+.footer-content {
     opacity: 0.3;
+    font-weight: 600;
 }
 
 /* --- ANIMATIONS --- */
 .reveal, .reveal-delay-1, .reveal-delay-2, .reveal-delay-3 {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(60px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active { opacity: 1; transform: translateY(0); }
-.reveal-delay-1.active { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
-.reveal-delay-2.active { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
-.reveal-delay-3.active { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+.reveal-delay-1.active { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+.reveal-delay-2.active { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.reveal-delay-3.active { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .container { padding: 0 2rem; }
-    .hero-main h1 { font-size: 5rem; letter-spacing: -2px; }
-    .mission-wrapper { flex-direction: column; }
-    .mission-content p { font-size: 1.8rem; }
+@media (max-width: 1200px) {
+    .container { padding: 0 3rem; }
+    .hero-main h1 { font-size: 6.5rem; }
+    .mission-content p { font-size: 2.8rem; }
+    .project-detail h3 { font-size: 4rem; }
 }
 
 @media (max-width: 768px) {
-    .hero-main h1 { font-size: 3.5rem; }
+    .container { padding: 0 2rem; }
+    nav { height: 100px; }
+    .hero-main h1 { font-size: 4.5rem; }
     .fact-card { display: none; }
-    .project-item { flex-direction: column; gap: 1rem; }
-    .project-detail h3 { font-size: 2rem; }
-    .talk h2 { font-size: 3rem; }
+    .project-item { flex-direction: column; gap: 2rem; }
+    .project-detail h3 { font-size: 3rem; }
+    .talk h2 { font-size: 4rem; }
+    .mission-content p { font-size: 2rem; }
 }

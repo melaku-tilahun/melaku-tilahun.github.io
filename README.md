@@ -10,12 +10,13 @@
 
 ## 🚀 About Me
 
-I'm a **Software Developer** passionate about creating innovative solutions and exploring the intersection of technology and creativity. I love working with cutting-edge technologies and building tools that make a difference.
+I'm a hands-on developer who builds intelligent web and mobile applications. Whether it's full-stack web and mobile apps, or integrating domain-specific AI—like chatbots with RAG systems—I focus on creating solutions that don't just work, but **understand**. My passion lies in bridging the gap between raw code and contextual intelligence, making applications smarter and more attuned to real-world needs. 
 
-- 🔭 Currently working on **blockchain integrations** and **authentication SDKs**
-- 🌱 Exploring **AI/ML** and **Web3 technologies**
-- 💡 Always learning and experimenting with new tech stacks
-- ⚡ Fun fact: I believe code is poetry in motion!
+**What excites me?** Taking complex challenges and turning them into simple, effective tech solutions. My work has been recognized in several innovation competitions (yes, I've got some awards on my shelf!), but what really matters is seeing people actually use what I build. 
+
+Right now, I'm growing at the **Jimma University Innovation Incubation Center**, where I get to experiment, lead projects, and push my skills further. When I'm not coding, I'm coordinating campus health tech initiatives with **YeneHealth** because I believe technology should improve lives in tangible ways. 
+
+I'm always open to interesting collaborations, crazy ideas, or just good tech conversations. If you're working on something meaningful, let's talk.
 
 ---
 

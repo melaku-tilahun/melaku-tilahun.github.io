@@ -1,227 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Melaku Tilahun | Hands-on Developer & AI Enthusiast</title>
-    <meta
-      name="description"
-      content="Portfolio of Melaku Tilahun, a hands-on developer building intelligent web and mobile applications with a focus on AI integration and contextual intelligence."
-    />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melaku Tilahun | Intelligent Solutions</title>
+    <meta name="description" content="Portfolio of Melaku Tilahun, building intelligent applications.">
+    
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <!-- Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="cursor-follower"></div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Grid Background -->
+    <div class="grid-overlay"></div>
+    
+    <!-- Liquid Background Elements -->
+    <div class="liquid-bg">
+        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1000V400C200 600 400 200 600 400C800 600 1000 400 1000 400V1000H0Z" fill="url(#grad1)"/>
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#f0f0f0;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
 
     <nav>
-      <div class="container nav-content">
-        <a href="#" class="logo">MT<span>.</span></a>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact" class="btn btn-primary">Contact</a></li>
-        </ul>
-      </div>
+        <div class="container nav-content">
+            <a href="#" class="logo">melaku<span>.</span></a>
+            <div class="menu-btn">
+                <div class="menu-icon"></div>
+            </div>
+        </div>
     </nav>
 
-    <header class="hero">
-      <div class="hero-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-      </div>
-      <div class="container hero-content">
-        <h1 class="reveal">
-          Building <span class="gradient-text">Intelligent</span> Applications
-        </h1>
-        <p class="reveal-delay-1">
-          Hands-on developer crafting full-stack web and mobile apps that
-          understand and adapt.
-        </p>
-        <div class="hero-btns reveal-delay-2">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-outline">Let's Talk</a>
-        </div>
-      </div>
-      <a href="#about" class="scroll-indicator">
-        <i class="fa-solid fa-chevron-down"></i>
-      </a>
-    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-wrapper">
+                <div class="hero-main">
+                    <h1 class="reveal">Building <br> <span class="light">intelligent</span> <br> applications.</h1>
+                    
+                    <div class="hero-action reveal-delay-1">
+                        <a href="#contact" class="cta-toggle">
+                            <span class="dot"></span>
+                            <span class="arrow">→</span>
+                        </a>
+                        <p>Bridging code <br> and intelligence.</p>
+                    </div>
+                </div>
 
-    <section id="about" class="about">
-      <div class="container section-content">
-        <div class="section-header">
-          <h2 class="reveal">About Me</h2>
-          <div class="line reveal-delay-1"></div>
-        </div>
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p>
-              I'm a hands-on developer who builds intelligent web and mobile
-              applications. Whether it's full-stack web and mobile apps, or
-              integrating domain-specific AI—like chatbots with RAG systems—I
-              focus on creating solutions that don't just work, but
-              <strong>understand</strong>.
-            </p>
-            <p>
-              My passion lies in bridging the gap between raw code and
-              contextual intelligence, making applications smarter and more
-              attuned to real-world needs.
-            </p>
-            <p>
-              Right now, I'm growing at the
-              <strong>Jimma University Innovation Incubation Center</strong>,
-              where I get to experiment, lead projects, and push my skills
-              further.
-            </p>
-          </div>
-          <div class="about-stats reveal-delay-1">
-            <div class="stat-card">
-              <h3>Innovation Awards</h3>
-              <p>Several recognitions in competitions</p>
-            </div>
-            <div class="stat-card">
-              <h3>Campus Leadership</h3>
-              <p>Health Tech Coordinator at YeneHealth</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                <!-- Fact Card 01 -->
+                <div class="fact-card reveal-delay-2" style="top: 20%; right: 10%;">
+                    <div class="card-num">01</div>
+                    <div class="card-text">
+                        <p>Developing innovative tech that turns complex challenges into effective solutions with high added value.</p>
+                    </div>
+                </div>
 
-    <section id="projects" class="projects">
-      <div class="container section-content">
-        <div class="section-header">
-          <h2 class="reveal">Featured Work</h2>
-          <div class="line reveal-delay-1"></div>
-        </div>
+                <div class="scroll-down reveal-delay-3">
+                    <span class="arrow-down">↓</span>
+                    <span>Scroll Down</span>
+                </div>
+            </div>
+        </section>
 
-        <div class="projects-grid">
-          <!-- Fayda SDK -->
-          <div class="project-card reveal">
-            <div class="project-info">
-              <div class="project-tags">
-                <span>OIDC</span>
-                <span>Node.js</span>
-                <span>TypeScript</span>
-              </div>
-              <h3>Fayda SDK</h3>
-              <p>
-                A minimalist, secure-by-default Node.js SDK for integrating with
-                Ethiopia's National ID (Fayda) via the MOSIP eSignet platform.
-              </p>
-              <div class="project-features">
-                <ul>
-                  <li>Zero-Config PKCE</li>
-                  <li>Automated signing of Client Assertions</li>
-                  <li>Identity JWT unwrapping & verification</li>
-                </ul>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/melaku-tilahun/fayda-sdk"
-                  target="_blank"
-                  ><i class="fa-brands fa-github"></i> View Repo</a
-                >
-              </div>
+        <!-- Mission Section -->
+        <section id="about" class="mission">
+            <div class="container mission-wrapper">
+                <div class="mission-label reveal">Our mission</div>
+                <div class="mission-content reveal-delay-1">
+                    <p>I build solutions that don't just work, but **understand**. From full-stack apps to RAG-based AI, I focus on bridging the gap between raw code and contextual intelligence to meet real-world needs.</p>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section id="skills" class="skills">
-      <div class="container section-content">
-        <div class="section-header">
-          <h2 class="reveal">Tech Stack</h2>
-          <div class="line reveal-delay-1"></div>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-category reveal">
-            <h4>Languages</h4>
-            <div class="skill-items">
-              <span>JavaScript</span>
-              <span>TypeScript</span>
-              <span>Python</span>
+        <!-- Projects Section -->
+        <section id="projects" class="work">
+            <div class="container">
+                <div class="section-tag reveal">Selected Work</div>
+                
+                <div class="projects-list">
+                    <div class="project-item reveal">
+                        <div class="project-num">02</div>
+                        <div class="project-detail">
+                            <h3>Fayda SDK</h3>
+                            <p>Handeling OIDC complexity for Ethiopia's National ID.</p>
+                            <a href="https://github.com/melaku-tilahun/fayda-sdk" target="_blank" class="project-link">View Project ↗</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="skill-category reveal-delay-1">
-            <h4>Frameworks</h4>
-            <div class="skill-items">
-              <span>Node.js</span>
-              <span>Express.js</span>
-              <span>React</span>
-              <span>Flutter</span>
-            </div>
-          </div>
-          <div class="skill-category reveal-delay-2">
-            <h4>Web3 & AI</h4>
-            <div class="skill-items">
-              <span>Solana</span>
-              <span>RAG Systems</span>
-              <span>Gemini API</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-      <div class="container section-content">
-        <div class="section-header">
-          <h2 class="reveal">Let's Connect</h2>
-          <div class="line reveal-delay-1"></div>
-        </div>
-        <div class="contact-card reveal">
-          <p>
-            I'm always open to interesting collaborations, crazy ideas, or just
-            good tech conversations. If you're working on something meaningful,
-            let's talk.
-          </p>
-          <div class="social-links">
-            <a
-              href="https://linkedin.com/in/melaku-tilahun"
-              target="_blank"
-              aria-label="LinkedIn"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-            <a
-              href="https://github.com/melaku-tilahun"
-              target="_blank"
-              aria-label="GitHub"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="mailto:your-email@example.com" aria-label="Email"
-              ><i class="fa-solid fa-envelope"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Contact/Talk Section -->
+        <section id="contact" class="talk">
+            <div class="container">
+                <h2 class="reveal">Let's build <br> something <br> <span class="light">meaningful.</span></h2>
+                <div class="contact-links reveal-delay-1">
+                    <a href="https://linkedin.com/in/melaku-tilahun" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/melaku-tilahun" target="_blank">GitHub</a>
+                    <a href="mailto:your-email@example.com">Email</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-      <div class="container">
-        <p>
-          &copy; <span id="year"></span> Melaku Tilahun. All rights reserved.
-        </p>
-      </div>
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> MT. Crafted with precision.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

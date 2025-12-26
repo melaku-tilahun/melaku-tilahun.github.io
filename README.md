@@ -48,11 +48,13 @@ I'm a **Software Developer** passionate about creating innovative solutions and 
 
 <div align="center">
   
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=melaku-tilahun&theme=react&hide_border=true&background=0D1117&stroke=0D1117&ring=3B88F7&fire=3B88F7&currStreakLabel=3B88F7)](https://git.io/streak-stats)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=melaku-tilahun&theme=react&hide_border=true&background=0D1117&stroke=0D1117&ring=3B88F7&fire=3B88F7&currStreakLabel=3B88F7&v=1)](https://git.io/streak-stats)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=melaku-tilahun&show_icons=true&theme=react&hide_border=true&bg_color=0D1117&title_color=3B88F7&icon_color=3B88F7&text_color=C9D1D9&count_private=true)
+![GitHub Stats](https://github-readme-stats-fast.vercel.app/api?username=melaku-tilahun&show_icons=true&theme=react&hide_border=true&bg_color=0D1117&title_color=3B88F7&icon_color=3B88F7&text_color=C9D1D9&count_private=true&v=1)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=melaku-tilahun&layout=compact&theme=react&hide_border=true&bg_color=0D1117&title_color=3B88F7&text_color=C9D1D9)
+![Top Languages](https://github-readme-stats-fast.vercel.app/api/top-langs/?username=melaku-tilahun&layout=compact&theme=react&hide_border=true&bg_color=0D1117&title_color=3B88F7&text_color=C9D1D9&v=1)
+
+![Profile Details](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=melaku-tilahun&theme=react&bg_color=0D1117&title_color=3B88F7&text_color=C9D1D9&v=1)
 
 </div>
 
@@ -62,7 +64,7 @@ I'm a **Software Developer** passionate about creating innovative solutions and 
 
 <div align="center">
 
-[![Fayda SDK](https://github-readme-stats.vercel.app/api/pin/?username=melaku-tilahun&repo=fayda-sdk&theme=react&hide_border=true&bg_color=0D1117&title_color=3B88F7&icon_color=3B88F7&text_color=C9D1D9)](https://github.com/melaku-tilahun/fayda-sdk)
+[![Fayda SDK](https://github-readme-stats-fast.vercel.app/api/pin/?username=melaku-tilahun&repo=fayda-sdk&theme=react&hide_border=true&bg_color=0D1117&title_color=3B88F7&icon_color=3B88F7&text_color=C9D1D9&v=1)](https://github.com/melaku-tilahun/fayda-sdk)
 
 </div>
 

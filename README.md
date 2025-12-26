@@ -2,105 +2,138 @@
   
 # 👋 Hi, I'm Melaku Tilahun
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=3B88F7&center=true&vCenter=true&width=600&lines=Passionate+Software+Developer;AI+Enthusiast;Tech+Innovator;Building+the+Future+with+Code)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=600&lines=Full+Stack+Developer;AI+Enthusiast;Building+Intelligent+Solutions)](https://git.io/typing-svg)
+
+**🌐 Portfolio:** [melaku-tilahun.github.io](https://melaku-tilahun.github.io)
 
 </div>
 
 ---
 
-##  About Me
+## 🚀 About This Portfolio
 
-I'm a hands-on developer who builds intelligent web and mobile applications. Whether it's full-stack web and mobile apps, or integrating domain-specific AI—like chatbots with RAG systems—I focus on creating solutions that don't just work, but **understand**. My passion lies in bridging the gap between raw code and contextual intelligence, making applications smarter and more attuned to real-world needs. 
+A modern, multi-page portfolio website built with:
+- **Pure HTML, CSS, and JavaScript** (no frameworks)
+- **Glassmorphism design** with dark theme
+- **Smooth animations** and micro-interactions
+- **Fully responsive** across all devices
+- **SEO optimized** with meta tags
+- **Clean URLs** for GitHub Pages
 
-**What excites me?** Taking complex challenges and turning them into simple, effective tech solutions. My work has been recognized in several innovation competitions (yes, I've got some awards on my shelf!), but what really matters is seeing people actually use what I build. 
+### 📁 Structure
 
-Right now, I'm growing at the **Jimma University Innovation Incubation Center**, where I get to experiment, lead projects, and push my skills further. When I'm not coding, I'm coordinating campus health tech initiatives with **YeneHealth** because I believe technology should improve lives in tangible ways. 
-
-I'm always open to interesting collaborations, crazy ideas, or just good tech conversations. If you're working on something meaningful, let's talk.
+```
+├── index.html          # Homepage with hero & featured projects
+├── about.html          # About page with skills & experience
+├── projects.html       # Projects page with filtering
+├── contact.html        # Contact page with form
+├── css/
+│   ├── variables.css   # Design tokens & CSS variables
+│   ├── global.css      # Global styles & reset
+│   ├── components.css  # Reusable components
+│   └── animations.css  # Animations & transitions
+├── js/
+│   ├── main.js         # Core functionality
+│   ├── animations.js   # Scroll animations
+│   └── projects.js     # Project filtering
+└── assets/
+    ├── images/         # Project images & graphics
+    └── icons/          # SVG icons
+```
 
 ---
 
-##  Tech Stack
+## 💻 Local Development
 
-<div align="center">
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/melaku-tilahun/melaku-tilahun.github.io.git
+   cd melaku-tilahun.github.io
+   ```
+
+2. **Run a local server**
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js
+   npx http-server
+   ```
+
+3. **Open in browser**
+   ```
+   http://localhost:8000
+   ```
+
+---
+
+## 🎨 Design Features
+
+- **Modern Glassmorphism UI** with backdrop blur effects
+- **Gradient Accents** (Indigo, Purple, Pink)
+- **Custom Cursor** (desktop only)
+- **Scroll Reveal Animations** using Intersection Observer
+- **Responsive Navigation** with mobile menu
+- **Dark Theme** optimized for readability
+
+---
+
+## 🔧 Tech Stack
 
 ### Languages & Frameworks
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-
-### Blockchain & Web3
-![Solana](https://img.shields.io/badge/Solana-14F195?style=for-the-badge&logo=solana&logoColor=black)
-![Web3](https://img.shields.io/badge/Web3-F16822?style=for-the-badge&logo=web3.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 
 ### Tools & Technologies
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white)
-
-</div>
 
 ---
 
-##  GitHub Statistics
+## 📊 GitHub Statistics
 
 <div align="center">
   
-[![GitHub Streak](https://streak-stats.vercel.app/?user=melaku-tilahun&theme=react&hide_border=true&background=0D1117&stroke=0D1117&ring=3B88F7&fire=3B88F7&currStreakLabel=3B88F7&v=2)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.vercel.app/?user=melaku-tilahun&theme=react&hide_border=true&background=0D1117&stroke=0D1117&ring=6366F1&fire=6366F1&currStreakLabel=6366F1)](https://git.io/streak-stats)
 
-![GitHub Stats](https://github-readme-stats-fast.vercel.app/api?username=melaku-tilahun&show_icons=true&theme=react&hide_border=true&bg_color=0D1117&title_color=3B88F7&icon_color=3B88F7&text_color=C9D1D9&count_private=true&v=1)
+![GitHub Stats](https://github-readme-stats-fast.vercel.app/api?username=melaku-tilahun&show_icons=true&theme=react&hide_border=true&bg_color=0D1117&title_color=6366F1&icon_color=6366F1&text_color=C9D1D9&count_private=true)
 
-![Top Languages](https://github-readme-stats-fast.vercel.app/api/top-langs/?username=melaku-tilahun&layout=compact&theme=react&hide_border=true&bg_color=0D1117&title_color=3B88F7&text_color=C9D1D9&v=1)
-
-![Profile Details](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=melaku-tilahun&theme=react&bg_color=0D1117&title_color=3B88F7&text_color=C9D1D9&v=1)
+![Top Languages](https://github-readme-stats-fast.vercel.app/api/top-langs/?username=melaku-tilahun&layout=compact&theme=react&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=C9D1D9)
 
 </div>
 
 ---
 
-##  Featured Projects
-
-<div align="center">
-
-[![Fayda SDK](https://github-readme-stats-fast.vercel.app/api/pin/?username=melaku-tilahun&repo=fayda-sdk&theme=react&hide_border=true&bg_color=0D1117&title_color=3B88F7&icon_color=3B88F7&text_color=C9D1D9&v=1)](https://github.com/melaku-tilahun/fayda-sdk)
-
-</div>
+## 🌟 Featured Projects
 
 ### 🔐 [Fayda SDK](https://github.com/melaku-tilahun/fayda-sdk)
 
 A minimalist, secure-by-default Node.js SDK for integrating with Ethiopia's National ID (Fayda) via the MOSIP eSignet OIDC platform.
 
-This package handles the complexity of OIDC, PKCE, and Private Key JWT authentication, allowing you to focus on your application logic.
-
 **Key Features:**
-- **Zero-Config PKCE:** Automatically generates cryptographically secure `code_verifier` and `code_challenge`.
-- **Automated Signing:** Handles RSA-SHA256 signing of Client Assertions using your Private Key.
-- **Environment Presets:** Built-in configurations for UAT (Staging) and PROD (Live).
-- **Identity Unwrapping:** Automatically verifies and decodes the User Identity JWT returned by Fayda.
-- **TypeScript Support:** Includes full type definitions.
+- Zero-Config PKCE with automatic cryptographic security
+- Automated RSA-SHA256 signing of Client Assertions
+- Built-in configurations for UAT and PROD environments
+- Full TypeScript support
+
+[![NPM](https://img.shields.io/npm/v/fayda-sdk?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/fayda-sdk)
+[![GitHub](https://img.shields.io/github/stars/melaku-tilahun/fayda-sdk?style=for-the-badge&logo=github)](https://github.com/melaku-tilahun/fayda-sdk)
 
 ---
 
-##  Contribution Activity
-
-<div align="center">
-
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=melaku-tilahun&theme=react-dark&hide_border=true&bg_color=0D1117&color=3B88F7&line=3B88F7&point=FFFFFF)
-
-</div>
-
----
-
-##  Connect With Me
+## 📫 Connect With Me
 
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/melaku-tilahun)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/melaku-tilahun)
-[![Portfolio](https://img.shields.io/badge/Portfolio-3B88F7?style=for-the-badge&logo=google-chrome&logoColor=white)](https://melaku-tilahun.github.io)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:melaku.tilahun.dev@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-6366F1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://melaku-tilahun.github.io)
 
 </div>
 
@@ -108,11 +141,11 @@ This package handles the complexity of OIDC, PKCE, and Private Key JWT authentic
 
 <div align="center">
 
-### Quote of the Day
+### 💡 Quote of the Day
 ![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=react)
 
-### Profile Views
-![Profile Views](https://komarev.com/ghpvc/?username=melaku-tilahun&color=3B88F7&style=for-the-badge&label=Profile+Views)
+### 👀 Profile Views
+![Profile Views](https://komarev.com/ghpvc/?username=melaku-tilahun&color=6366F1&style=for-the-badge&label=Profile+Views)
 
 </div>
 
@@ -120,6 +153,7 @@ This package handles the complexity of OIDC, PKCE, and Private Key JWT authentic
 
 <div align="center">
   
-**✨ Thanks for stopping by! Let's build something amazing together! ✨**
+**✨ Thanks for visiting! Let's build something amazing together! ✨**
 
 </div>
+

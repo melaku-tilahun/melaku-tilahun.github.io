@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of projects by Melaku Tilahun - Full Stack Developer & AI Enthusiast">
+  <title>Projects | Melaku Tilahun</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <style>
+    .page-header {
+      padding-top: 150px;
+      padding-bottom: var(--space-16);
+      text-align: center;
+    }
+    
+    .page-title {
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin-bottom: var(--space-6);
+    }
+    
+    .filter-controls {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-12);
+    }
+    
+    .filter-btn {
+      padding: var(--space-3) var(--space-6);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-full);
+      color: var(--color-text-secondary);
+      font-weight: var(--font-medium);
+      font-size: var(--text-sm);
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--color-accent-primary);
+      border-color: var(--color-accent-primary);
+      color: var(--color-text-primary);
+    }
+    
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto var(--space-12);
+      position: relative;
+    }
+    
+    .search-box input {
+      width: 100%;
+      padding: var(--space-4) var(--space-6) var(--space-4) var(--space-12);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-full);
+      color: var(--color-text-primary);
+      font-size: var(--text-base);
+    }
+    
+    .search-box i {
+      position: absolute;
+      left: var(--space-4);
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-muted);
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: var(--space-8);
+      margin-bottom: var(--space-16);
+    }
+    
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-image {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--space-6);
+    }
+    
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-smooth);
+    }
+    
+    .project-card:hover .project-image img {
+      transform: scale(1.1);
+    }
+    
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: var(--space-6);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: var(--space-3);
+    }
+    
+    .btn-sm {
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-sm);
+    }
+    
+    .project-content {
+      padding: 0 var(--space-4);
+    }
+    
+    .project-title {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-3);
+    }
+    
+    .project-description {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+      line-height: 1.6;
+    }
+    
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="grid-background"></div>
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">melaku<span>.</span></a>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tag reveal">Portfolio</span>
+      <h1 class="page-title reveal reveal-delay-1">
+        My <span class="text-gradient">Projects</span>
+      </h1>
+      <p class="section-description reveal reveal-delay-2">
+        A collection of work showcasing technical excellence and real-world impact
+      </p>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section style="padding: var(--space-12) 0 var(--space-24);">
+    <div class="container">
+      <!-- Search -->
+      <div class="search-box reveal">
+        <i class="fas fa-search"></i>
+        <input type="text" id="project-search" placeholder="Search projects...">
+      </div>
+      
+      <!-- Filters -->
+      <div class="filter-controls reveal reveal-delay-1">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="open-source">Open Source</button>
+        <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
+        <button class="filter-btn" data-filter="tools">Tools</button>
+      </div>
+      
+      <!-- Projects Grid -->
+      <div id="projects-container" class="projects-grid">
+        <!-- Projects will be dynamically loaded via JavaScript -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Melaku Tilahun</h4>
+          <p style="color: var(--color-text-tertiary); margin-top: var(--space-4);">
+            Building intelligent solutions that bridge code and contextual intelligence.
+          </p>
+          <div class="social-links" style="margin-top: var(--space-6);">
+            <a href="https://github.com/melaku-tilahun" target="_blank" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/melaku-tilahun" target="_blank" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:melaku.tilahun.dev@gmail.com" class="social-link" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="projects.html" class="footer-link">Projects</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="https://github.com/melaku-tilahun" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://linkedin.com/in/melaku-tilahun" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="mailto:melaku.tilahun.dev@gmail.com" class="footer-link">Email</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> Melaku Tilahun. Crafted with precision.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>

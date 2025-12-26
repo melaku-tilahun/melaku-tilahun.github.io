@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Melaku Tilahun - Full Stack Developer & AI Enthusiast">
+  <title>Contact | Melaku Tilahun</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <style>
+    .page-header {
+      padding-top: 150px;
+      padding-bottom: var(--space-16);
+      text-align: center;
+    }
+    
+    .page-title {
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin-bottom: var(--space-6);
+    }
+    
+    .contact-section {
+      padding: var(--space-16) 0 var(--space-24);
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+    }
+    
+    .contact-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      backdrop-filter: blur(10px);
+      transition: all var(--transition-smooth);
+    }
+    
+    .contact-card:hover {
+      border-color: var(--color-accent-primary);
+      transform: translateY(-4px);
+    }
+    
+    .contact-card-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--gradient-primary);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-xl);
+      color: var(--color-text-primary);
+    }
+    
+    .contact-card h3 {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-2);
+    }
+    
+    .contact-card p {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+    
+    .contact-card a {
+      color: var(--color-accent-primary);
+      font-weight: var(--font-semibold);
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+    
+    .contact-card a:hover {
+      color: var(--color-accent-secondary);
+    }
+    
+    .contact-form {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-10);
+      backdrop-filter: blur(10px);
+    }
+    
+    .form-success {
+      display: none;
+      padding: var(--space-4);
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: var(--radius-lg);
+      color: #22c55e;
+      margin-bottom: var(--space-6);
+      text-align: center;
+    }
+    
+    .form-success.show {
+      display: block;
+    }
+    
+    .availability {
+      text-align: center;
+      padding: var(--space-16) 0;
+      background: var(--color-bg-secondary);
+    }
+    
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-4) var(--space-8);
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: var(--radius-full);
+      color: #22c55e;
+      font-weight: var(--font-semibold);
+      font-size: var(--text-lg);
+    }
+    
+    .availability-badge::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="grid-background"></div>
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">melaku<span>.</span></a>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tag reveal">Get In Touch</span>
+      <h1 class="page-title reveal reveal-delay-1">
+        Let's <span class="text-gradient">Connect</span>
+      </h1>
+      <p class="section-description reveal reveal-delay-2">
+        Have a project in mind? Let's build something amazing together
+      </p>
+    </div>
+  </section>
+  
+  <!-- Availability -->
+  <section class="availability reveal">
+    <div class="container">
+      <span class="availability-badge">
+        Available for Freelance Projects
+      </span>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-card reveal">
+            <div class="contact-card-header">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h3>Email</h3>
+              </div>
+            </div>
+            <p>Drop me a line anytime</p>
+            <a href="mailto:melaku.tilahun.dev@gmail.com">melaku.tilahun.dev@gmail.com</a>
+          </div>
+          
+          <div class="contact-card reveal reveal-delay-1">
+            <div class="contact-card-header">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div>
+                <h3>GitHub</h3>
+              </div>
+            </div>
+            <p>Check out my code and projects</p>
+            <a href="https://github.com/melaku-tilahun" target="_blank">github.com/melaku-tilahun</a>
+          </div>
+          
+          <div class="contact-card reveal reveal-delay-2">
+            <div class="contact-card-header">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div>
+                <h3>LinkedIn</h3>
+              </div>
+            </div>
+            <p>Let's connect professionally</p>
+            <a href="https://linkedin.com/in/melaku-tilahun" target="_blank">linkedin.com/in/melaku-tilahun</a>
+          </div>
+          
+          <div class="contact-card reveal reveal-delay-3">
+            <div class="contact-card-header">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h3>Location</h3>
+              </div>
+            </div>
+            <p>Based in Ethiopia</p>
+            <span style="color: var(--color-text-secondary);">Open to remote opportunities worldwide</span>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form reveal reveal-delay-1">
+          <h3 style="font-size: var(--text-2xl); margin-bottom: var(--space-6);">Send a Message</h3>
+          
+          <div id="form-success" class="form-success">
+            <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+          </div>
+          
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Melaku Tilahun</h4>
+          <p style="color: var(--color-text-tertiary); margin-top: var(--space-4);">
+            Building intelligent solutions that bridge code and contextual intelligence.
+          </p>
+          <div class="social-links" style="margin-top: var(--space-6);">
+            <a href="https://github.com/melaku-tilahun" target="_blank" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/melaku-tilahun" target="_blank" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:melaku.tilahun.dev@gmail.com" class="social-link" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="projects.html" class="footer-link">Projects</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="https://github.com/melaku-tilahun" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://linkedin.com/in/melaku-tilahun" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="mailto:melaku.tilahun.dev@gmail.com" class="footer-link">Email</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> Melaku Tilahun. Crafted with precision.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  
+  <script>
+    // Simple form handling (replace with Formspree or your backend)
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('form-success');
+    
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Show success message (customize based on your form service)
+      successMessage.classList.add('show');
+      form.reset();
+      
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

@@ -1,192 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melaku Tilahun | Intelligent Solutions</title>
-    <meta name="description" content="Portfolio of Melaku Tilahun, building intelligent applications.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Melaku Tilahun - Full Stack Developer & AI Enthusiast. Building intelligent solutions that bridge code and contextual intelligence.">
+  <meta name="keywords" content="Melaku Tilahun, Full Stack Developer, AI, Machine Learning, Web Development, Software Engineer">
+  <meta name="author" content="Melaku Tilahun">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://melaku-tilahun.github.io/">
+  <meta property="og:title" content="Melaku Tilahun | Full Stack Developer & AI Enthusiast">
+  <meta property="og:description" content="Building intelligent solutions that bridge code and contextual intelligence.">
+  <meta property="og:image" content="https://melaku-tilahun.github.io/assets/images/og-image.jpg">
+  
+  <title>Melaku Tilahun | Full Stack Developer & AI Enthusiast</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <style>
+    /* Page-specific styles */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 100px;
+    }
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
     
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    .hero-background img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     
-    <link rel="stylesheet" href="app.css?v=1.1">
+    .hero-content {
+      text-align: center;
+      max-width: 900px;
+      padding: 0 var(--space-6);
+    }
+    
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: var(--font-extrabold);
+      line-height: 1.1;
+      margin-bottom: var(--space-6);
+      letter-spacing: -0.03em;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-10);
+      font-weight: var(--font-normal);
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .featured-work {
+      padding: var(--space-24) 0;
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+    
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-image {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--space-6);
+    }
+    
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-smooth);
+    }
+    
+    .project-card:hover .project-image img {
+      transform: scale(1.1);
+    }
+    
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: var(--space-6);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: var(--space-3);
+    }
+    
+    .btn-sm {
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-sm);
+    }
+    
+    .project-content {
+      padding: 0 var(--space-4);
+    }
+    
+    .project-title {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-3);
+    }
+    
+    .project-description {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+      line-height: 1.6;
+    }
+    
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    
+    .stats-section {
+      background: var(--color-bg-secondary);
+      padding: var(--space-20) 0;
+      text-align: center;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+    
+    .stat-item h3 {
+      font-size: var(--text-5xl);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--space-2);
+    }
+    
+    .stat-item p {
+      color: var(--color-text-tertiary);
+      font-size: var(--text-lg);
+    }
+    
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-    <!-- Custom Cursor -->
-    <div class="cursor-follower"></div>
-
-    <!-- Grid Background -->
-    <div class="grid-overlay"></div>
-    
-    <!-- Liquid Background Elements -->
-    <div class="liquid-bg">
-        <div></div>
+<body>
+  <!-- Background Elements -->
+  <div class="grid-background"></div>
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">melaku<span>.</span></a>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
     </div>
-
-    <nav>
-        <div class="container nav-content">
-            <a href="#" class="logo">melaku<span>.</span></a>
-            <div class="menu-btn">
-                <div class="menu-icon"></div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img src="assets/images/hero-bg.png" alt="Hero Background">
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title reveal">
+        Bridging <span class="text-gradient">Code</span><br>
+        & <span class="text-gradient">Intelligence</span>
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-1">
+        Full Stack Developer & AI Enthusiast crafting intelligent solutions that don't just work, but understand.
+      </p>
+      <div class="hero-cta reveal reveal-delay-2">
+        <a href="projects.html" class="btn btn-primary">
+          <span>View My Work</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="contact.html" class="btn btn-outline">
+          <span>Get In Touch</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Work -->
+  <section class="featured-work">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Featured Projects</span>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-description">
+          Showcasing projects that combine technical excellence with real-world impact
+        </p>
+      </div>
+      
+      <div class="projects-grid">
+        <!-- Project 1: Fayda SDK -->
+        <div class="project-card card reveal" data-tilt>
+          <div class="project-image">
+            <img src="assets/images/project-fayda.jpg" alt="Fayda SDK">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/melaku-tilahun/fayda-sdk" target="_blank" class="btn btn-secondary btn-sm">
+                  <i class="fab fa-github"></i> Code
+                </a>
+                <a href="https://www.npmjs.com/package/fayda-sdk" target="_blank" class="btn btn-primary btn-sm">
+                  <i class="fas fa-external-link-alt"></i> NPM
+                </a>
+              </div>
             </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Fayda SDK</h3>
+            <p class="project-description">
+              Secure Node.js SDK for Ethiopia's National ID integration via MOSIP eSignet OIDC platform.
+            </p>
+            <div class="project-tags">
+              <span class="badge badge-primary">TypeScript</span>
+              <span class="badge">Node.js</span>
+              <span class="badge">OIDC</span>
+              <span class="badge">Security</span>
+            </div>
+          </div>
         </div>
-    </nav>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-wrapper">
-                <div class="hero-main">
-                    <h1 class="reveal">bridging <br> <span class="light">code</span> <br> & <span class="light">intelligence</span>.</h1>
-                    
-                    <div class="hero-action reveal-delay-1">
-                        <a href="#contact" class="cta-toggle">
-                            <span class="dot"></span>
-                            <span class="arrow">→</span>
-                        </a>
-                        <p>crafting high-performance <br> AI-driven solutions.</p>
-                    </div>
-                </div>
-
-                <!-- Fact Card 01 -->
-                <div class="fact-card reveal-delay-2" style="bottom: 20%; right: 10%;">
-                    <div class="card-num">01</div>
-                    <div class="card-text">
-                        <p>Turning complex challenges into effective, intelligent solutions with elegant code.</p>
-                    </div>
-                </div>
-
-                <div class="scroll-down reveal-delay-3">
-                    <span class="arrow-down">↓</span>
-                    <span>explore my work</span>
-                </div>
+        
+        <!-- Project 2: RAG Implementation -->
+        <div class="project-card card reveal reveal-delay-1" data-tilt>
+          <div class="project-image">
+            <img src="assets/images/project-rag.jpg" alt="RAG Implementation">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="btn btn-secondary btn-sm">
+                  <i class="fas fa-clock"></i> Coming Soon
+                </a>
+              </div>
             </div>
-        </section>
-
-        <!-- Mission Section -->
-        <section id="about" class="mission">
-            <div class="container mission-wrapper">
-                <div class="mission-label reveal">Our mission</div>
-                <div class="mission-content reveal-delay-1">
-                    <p>i build solutions that don't just work, but **understand**. bridging the gap between code and contextual intelligence.</p>
-                </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">RAG Implementation</h3>
+            <p class="project-description">
+              Advanced Retrieval-Augmented Generation for specialized AI agents with contextual understanding.
+            </p>
+            <div class="project-tags">
+              <span class="badge badge-primary">Python</span>
+              <span class="badge">AI/ML</span>
+              <span class="badge">LangChain</span>
+              <span class="badge">Vector DB</span>
             </div>
-        </section>
-
-        <!-- Projects Section (Bento Grid) -->
-        <section id="projects" class="work">
-            <div class="container">
-                <div class="section-tag reveal">Selected Work</div>
-                
-                <div class="bento-grid">
-                    <div class="bento-item large reveal">
-                        <div class="bento-icon"><i class="fas fa-fingerprint"></i></div>
-                        <div class="bento-content">
-                            <h3>Fayda SDK</h3>
-                            <p>Handling OIDC complexity for Ethiopia's National ID system. Simplifying identity integration for developers.</p>
-                            <a href="https://github.com/melaku-tilahun/fayda-sdk" target="_blank" class="project-link">View Project <span>→</span></a>
-                        </div>
-                    </div>
-                    
-                    <div class="bento-item medium reveal-delay-1">
-                        <div class="bento-icon"><i class="fas fa-brain"></i></div>
-                        <div class="bento-content">
-                            <h3>RAG Implementation</h3>
-                            <p>Advanced Retrieval-Augmented Generation for specialized AI agents.</p>
-                            <a href="#" class="project-link">Coming Soon <span>→</span></a>
-                        </div>
-                    </div>
-
-                    <div class="bento-item reveal-delay-2">
-                        <div class="bento-icon"><i class="fas fa-code-branch"></i></div>
-                        <div class="bento-content">
-                            <h3>Open Source</h3>
-                            <p>Contributing to the future of AI tools.</p>
-                        </div>
-                    </div>
-
-                    <div class="bento-item reveal-delay-3">
-                        <div class="bento-icon"><i class="fas fa-terminal"></i></div>
-                        <div class="bento-content">
-                            <h3>Automation</h3>
-                            <p>Streamlining workflows with intelligent scripts.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <div class="container">
-                <div class="section-tag reveal">Expertise</div>
-                <div class="skills-grid">
-                    <div class="skill-card reveal">
-                        <i class="fab fa-react"></i>
-                        <h4>Frontend</h4>
-                        <p>React, Next.js, Modern CSS</p>
-                    </div>
-                    <div class="skill-card reveal-delay-1">
-                        <i class="fab fa-node-js"></i>
-                        <h4>Backend</h4>
-                        <p>Node.js, Python, PostgreSQL</p>
-                    </div>
-                    <div class="skill-card reveal-delay-2">
-                        <i class="fas fa-robot"></i>
-                        <h4>AI / ML</h4>
-                        <p>RAG, LLMs, LangChain</p>
-                    </div>
-                    <div class="skill-card reveal-delay-3">
-                        <i class="fas fa-tools"></i>
-                        <h4>Tools</h4>
-                        <p>Docker, Git, CI/CD</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="experience">
-            <div class="container">
-                <div class="section-tag reveal">Trajectory</div>
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-date">2024 - Present</div>
-                        <h3>AI Solutions Architect</h3>
-                        <p>Specializing in RAG-based architectures and intelligent automation workflows.</p>
-                    </div>
-                    <div class="timeline-item reveal-delay-1">
-                        <div class="timeline-date">2023 - 2024</div>
-                        <h3>Full Stack Developer</h3>
-                        <p>Built robust web applications using React, Node.js, and cloud native technologies.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact/Talk Section -->
-        <section id="contact" class="talk">
-            <div class="container">
-                <h2 class="reveal">let's build <br> something <br> <span class="light">intelligent.</span></h2>
-                <div class="contact-links reveal-delay-1">
-                    <a href="https://linkedin.com/in/melaku-tilahun" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/melaku-tilahun" target="_blank">GitHub</a>
-                    <a href="mailto:melaku.tilahun.dev@gmail.com">Email</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; <span id="year"></span> MT. Crafted with precision.</p>
+          </div>
         </div>
-    </footer>
-
-    <script src="script.js"></script>
+        
+        <!-- Project 3: More Projects CTA -->
+        <div class="project-card card reveal reveal-delay-2" style="background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; min-height: 400px;">
+          <div style="text-align: center; padding: var(--space-8);">
+            <i class="fas fa-plus-circle" style="font-size: 4rem; margin-bottom: var(--space-6); opacity: 0.9;"></i>
+            <h3 style="font-size: var(--text-3xl); margin-bottom: var(--space-4);">More Projects</h3>
+            <p style="margin-bottom: var(--space-6); opacity: 0.9;">Explore my complete portfolio of work</p>
+            <a href="projects.html" class="btn btn-secondary">
+              View All Projects
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <h3 data-count="5">0</h3>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <h3 data-count="20">0</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <h3 data-count="10">0</h3>
+          <p>Open Source</p>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <h3 data-count="100">0</h3>
+          <p>Happy Clients</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Melaku Tilahun</h4>
+          <p style="color: var(--color-text-tertiary); margin-top: var(--space-4);">
+            Building intelligent solutions that bridge code and contextual intelligence.
+          </p>
+          <div class="social-links" style="margin-top: var(--space-6);">
+            <a href="https://github.com/melaku-tilahun" target="_blank" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/melaku-tilahun" target="_blank" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:melaku.tilahun.dev@gmail.com" class="social-link" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="projects.html" class="footer-link">Projects</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="https://github.com/melaku-tilahun" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://linkedin.com/in/melaku-tilahun" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="mailto:melaku.tilahun.dev@gmail.com" class="footer-link">Email</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> Melaku Tilahun. Crafted with precision.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>

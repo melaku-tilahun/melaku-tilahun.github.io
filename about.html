@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Melaku Tilahun - Full Stack Developer & AI Enthusiast with expertise in building intelligent solutions.">
+  <title>About | Melaku Tilahun</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <style>
+    .page-header {
+      padding-top: 150px;
+      padding-bottom: var(--space-20);
+      text-align: center;
+    }
+    
+    .page-title {
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin-bottom: var(--space-6);
+    }
+    
+    .about-intro {
+      padding: var(--space-16) 0;
+    }
+    
+    .intro-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: var(--text-lg);
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+    }
+    
+    .intro-content p {
+      margin-bottom: var(--space-6);
+    }
+    
+    .skills-section {
+      background: var(--color-bg-secondary);
+      padding: var(--space-24) 0;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+    
+    .skill-category {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      backdrop-filter: blur(10px);
+      transition: all var(--transition-smooth);
+    }
+    
+    .skill-category:hover {
+      border-color: var(--color-accent-primary);
+      transform: translateY(-8px);
+    }
+    
+    .skill-category h3 {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-6);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    
+    .skill-category i {
+      font-size: var(--text-3xl);
+      color: var(--color-accent-primary);
+    }
+    
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      color: var(--color-text-secondary);
+    }
+    
+    .skill-item i {
+      color: var(--color-accent-primary);
+      font-size: var(--text-sm);
+    }
+    
+    .experience-section {
+      padding: var(--space-24) 0;
+    }
+    
+    .timeline {
+      max-width: 900px;
+      margin: var(--space-12) auto 0;
+      position: relative;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--glass-border);
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--space-12);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+      grid-column: 2;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-date {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: right;
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: var(--color-accent-primary);
+      border: 4px solid var(--color-bg-primary);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    
+    .timeline-content {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      backdrop-filter: blur(10px);
+    }
+    
+    .timeline-content h3 {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-2);
+    }
+    
+    .timeline-content h4 {
+      color: var(--color-accent-primary);
+      font-size: var(--text-base);
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-4);
+    }
+    
+    .timeline-content p {
+      color: var(--color-text-tertiary);
+      font-size: var(--text-sm);
+    }
+    
+    .timeline-date {
+      display: flex;
+      align-items: center;
+      color: var(--color-text-muted);
+      font-weight: var(--font-semibold);
+      font-size: var(--text-sm);
+    }
+    
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 0;
+      }
+      
+      .timeline-item {
+        grid-template-columns: 1fr;
+        padding-left: var(--space-8);
+      }
+      
+      .timeline-item:nth-child(even) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-date {
+        grid-column: 1;
+        grid-row: auto;
+        text-align: left;
+      }
+      
+      .timeline-dot {
+        left: 0;
+      }
+      
+      .timeline-date {
+        margin-bottom: var(--space-4);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="grid-background"></div>
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">melaku<span>.</span></a>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tag reveal">About Me</span>
+      <h1 class="page-title reveal reveal-delay-1">
+        Building <span class="text-gradient">Intelligent</span> Solutions
+      </h1>
+    </div>
+  </section>
+  
+  <!-- About Intro -->
+  <section class="about-intro">
+    <div class="container">
+      <div class="intro-content reveal">
+        <p>
+          I'm a <strong>hands-on developer</strong> who builds intelligent web and mobile applications. Whether it's full-stack web and mobile apps, or integrating domain-specific AI—like chatbots with RAG systems—I focus on creating solutions that don't just work, but <strong>understand</strong>.
+        </p>
+        <p>
+          My passion lies in bridging the gap between raw code and contextual intelligence, making applications smarter and more attuned to real-world needs. What excites me? Taking complex challenges and turning them into simple, effective tech solutions.
+        </p>
+        <p>
+          My work has been recognized in several innovation competitions, but what really matters is seeing people actually use what I build. Right now, I'm growing at the <strong>Jimma University Innovation Incubation Center</strong>, where I get to experiment, lead projects, and push my skills further.
+        </p>
+        <p>
+          When I'm not coding, I'm coordinating campus health tech initiatives with <strong>YeneHealth</strong> because I believe technology should improve lives in tangible ways. I'm always open to interesting collaborations, crazy ideas, or just good tech conversations.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-description">
+          A comprehensive toolkit for building modern, intelligent applications
+        </p>
+      </div>
+      
+      <div class="skills-grid">
+        <div class="skill-category reveal">
+          <h3>
+            <i class="fab fa-react"></i>
+            Frontend Development
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>React & Next.js</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>TypeScript & JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Modern CSS & Tailwind</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Responsive Design</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-category reveal reveal-delay-1">
+          <h3>
+            <i class="fab fa-node-js"></i>
+            Backend Development
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Node.js & Express</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Python & FastAPI</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>PostgreSQL & MongoDB</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>RESTful APIs & GraphQL</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-category reveal reveal-delay-2">
+          <h3>
+            <i class="fas fa-robot"></i>
+            AI & Machine Learning
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>RAG Systems</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>LLMs & OpenAI</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>LangChain & Vector DBs</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Natural Language Processing</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-category reveal reveal-delay-3">
+          <h3>
+            <i class="fas fa-tools"></i>
+            Tools & DevOps
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Git & GitHub</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Docker & Kubernetes</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>CI/CD Pipelines</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Cloud Platforms (AWS, Vercel)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Experience Section -->
+  <section class="experience-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Journey</span>
+        <h2 class="section-title">Experience & Education</h2>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">
+            <i class="fas fa-calendar-alt" style="margin-right: var(--space-2);"></i>
+            2024 - Present
+          </div>
+          <div class="timeline-content">
+            <h3>AI Solutions Architect</h3>
+            <h4>Freelance / Innovation Center</h4>
+            <p>
+              Specializing in RAG-based architectures and intelligent automation workflows. Leading projects that integrate AI capabilities into real-world applications.
+            </p>
+          </div>
+        </div>
+        
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">
+            <i class="fas fa-calendar-alt" style="margin-right: var(--space-2);"></i>
+            2023 - 2024
+          </div>
+          <div class="timeline-content">
+            <h3>Full Stack Developer</h3>
+            <h4>Various Projects</h4>
+            <p>
+              Built robust web applications using React, Node.js, and cloud-native technologies. Delivered scalable solutions for diverse client needs.
+            </p>
+          </div>
+        </div>
+        
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">
+            <i class="fas fa-calendar-alt" style="margin-right: var(--space-2);"></i>
+            2022 - Present
+          </div>
+          <div class="timeline-content">
+            <h3>Jimma University Innovation Center</h3>
+            <h4>Innovation & Development</h4>
+            <p>
+              Experimenting with cutting-edge technologies, leading innovation projects, and mentoring fellow developers in modern development practices.
+            </p>
+          </div>
+        </div>
+        
+        <div class="timeline-item reveal reveal-delay-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">
+            <i class="fas fa-calendar-alt" style="margin-right: var(--space-2);"></i>
+            2021 - 2023
+          </div>
+          <div class="timeline-content">
+            <h3>YeneHealth Campus Coordinator</h3>
+            <h4>Health Tech Initiative</h4>
+            <p>
+              Coordinating campus health technology initiatives, bridging technology and healthcare to improve student wellbeing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Melaku Tilahun</h4>
+          <p style="color: var(--color-text-tertiary); margin-top: var(--space-4);">
+            Building intelligent solutions that bridge code and contextual intelligence.
+          </p>
+          <div class="social-links" style="margin-top: var(--space-6);">
+            <a href="https://github.com/melaku-tilahun" target="_blank" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/melaku-tilahun" target="_blank" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:melaku.tilahun.dev@gmail.com" class="social-link" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="projects.html" class="footer-link">Projects</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="https://github.com/melaku-tilahun" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://linkedin.com/in/melaku-tilahun" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="mailto:melaku.tilahun.dev@gmail.com" class="footer-link">Email</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2025</span> Melaku Tilahun. Crafted with precision.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

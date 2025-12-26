@@ -16,21 +16,15 @@
     
     <link rel="stylesheet" href="app.css?v=1.1">
 </head>
-<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-follower"></div>
+
     <!-- Grid Background -->
     <div class="grid-overlay"></div>
     
     <!-- Liquid Background Elements -->
     <div class="liquid-bg">
-        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 1000V400C200 600 400 200 600 400C800 600 1000 400 1000 400V1000H0Z" fill="url(#grad1)"/>
-            <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#f0f0f0;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-        </svg>
+        <div></div>
     </div>
 
     <nav>
@@ -47,28 +41,28 @@
         <section class="hero">
             <div class="container hero-wrapper">
                 <div class="hero-main">
-                    <h1 class="reveal">Building <br> <span class="light">intelligent</span> <br> applications.</h1>
+                    <h1 class="reveal">bridging <br> <span class="light">code</span> <br> & <span class="light">intelligence</span>.</h1>
                     
                     <div class="hero-action reveal-delay-1">
                         <a href="#contact" class="cta-toggle">
                             <span class="dot"></span>
                             <span class="arrow">→</span>
                         </a>
-                        <p>Bridging code <br> and intelligence.</p>
+                        <p>crafting high-performance <br> AI-driven solutions.</p>
                     </div>
                 </div>
 
                 <!-- Fact Card 01 -->
-                <div class="fact-card reveal-delay-2" style="top: 20%; right: 10%;">
+                <div class="fact-card reveal-delay-2" style="bottom: 20%; right: 10%;">
                     <div class="card-num">01</div>
                     <div class="card-text">
-                        <p>Developing innovative tech that turns complex challenges into effective solutions with high added value.</p>
+                        <p>Turning complex challenges into effective, intelligent solutions with elegant code.</p>
                     </div>
                 </div>
 
                 <div class="scroll-down reveal-delay-3">
                     <span class="arrow-down">↓</span>
-                    <span>Scroll Down</span>
+                    <span>explore my work</span>
                 </div>
             </div>
         </section>
@@ -78,24 +72,97 @@
             <div class="container mission-wrapper">
                 <div class="mission-label reveal">Our mission</div>
                 <div class="mission-content reveal-delay-1">
-                    <p>I build solutions that don't just work, but **understand**. From full-stack apps to RAG-based AI, I focus on bridging the gap between raw code and contextual intelligence to meet real-world needs.</p>
+                    <p>i build solutions that don't just work, but **understand**. bridging the gap between code and contextual intelligence.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Section (Bento Grid) -->
         <section id="projects" class="work">
             <div class="container">
                 <div class="section-tag reveal">Selected Work</div>
                 
-                <div class="projects-list">
-                    <div class="project-item reveal">
-                        <div class="project-num">02</div>
-                        <div class="project-detail">
+                <div class="bento-grid">
+                    <div class="bento-item large reveal">
+                        <div class="bento-icon"><i class="fas fa-fingerprint"></i></div>
+                        <div class="bento-content">
                             <h3>Fayda SDK</h3>
-                            <p>Handeling OIDC complexity for Ethiopia's National ID.</p>
-                            <a href="https://github.com/melaku-tilahun/fayda-sdk" target="_blank" class="project-link">View Project ↗</a>
+                            <p>Handling OIDC complexity for Ethiopia's National ID system. Simplifying identity integration for developers.</p>
+                            <a href="https://github.com/melaku-tilahun/fayda-sdk" target="_blank" class="project-link">View Project <span>→</span></a>
                         </div>
+                    </div>
+                    
+                    <div class="bento-item medium reveal-delay-1">
+                        <div class="bento-icon"><i class="fas fa-brain"></i></div>
+                        <div class="bento-content">
+                            <h3>RAG Implementation</h3>
+                            <p>Advanced Retrieval-Augmented Generation for specialized AI agents.</p>
+                            <a href="#" class="project-link">Coming Soon <span>→</span></a>
+                        </div>
+                    </div>
+
+                    <div class="bento-item reveal-delay-2">
+                        <div class="bento-icon"><i class="fas fa-code-branch"></i></div>
+                        <div class="bento-content">
+                            <h3>Open Source</h3>
+                            <p>Contributing to the future of AI tools.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-item reveal-delay-3">
+                        <div class="bento-icon"><i class="fas fa-terminal"></i></div>
+                        <div class="bento-content">
+                            <h3>Automation</h3>
+                            <p>Streamlining workflows with intelligent scripts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-tag reveal">Expertise</div>
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <i class="fab fa-react"></i>
+                        <h4>Frontend</h4>
+                        <p>React, Next.js, Modern CSS</p>
+                    </div>
+                    <div class="skill-card reveal-delay-1">
+                        <i class="fab fa-node-js"></i>
+                        <h4>Backend</h4>
+                        <p>Node.js, Python, PostgreSQL</p>
+                    </div>
+                    <div class="skill-card reveal-delay-2">
+                        <i class="fas fa-robot"></i>
+                        <h4>AI / ML</h4>
+                        <p>RAG, LLMs, LangChain</p>
+                    </div>
+                    <div class="skill-card reveal-delay-3">
+                        <i class="fas fa-tools"></i>
+                        <h4>Tools</h4>
+                        <p>Docker, Git, CI/CD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-tag reveal">Trajectory</div>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h3>AI Solutions Architect</h3>
+                        <p>Specializing in RAG-based architectures and intelligent automation workflows.</p>
+                    </div>
+                    <div class="timeline-item reveal-delay-1">
+                        <div class="timeline-date">2023 - 2024</div>
+                        <h3>Full Stack Developer</h3>
+                        <p>Built robust web applications using React, Node.js, and cloud native technologies.</p>
                     </div>
                 </div>
             </div>
@@ -104,11 +171,11 @@
         <!-- Contact/Talk Section -->
         <section id="contact" class="talk">
             <div class="container">
-                <h2 class="reveal">Let's build <br> something <br> <span class="light">meaningful.</span></h2>
+                <h2 class="reveal">let's build <br> something <br> <span class="light">intelligent.</span></h2>
                 <div class="contact-links reveal-delay-1">
                     <a href="https://linkedin.com/in/melaku-tilahun" target="_blank">LinkedIn</a>
                     <a href="https://github.com/melaku-tilahun" target="_blank">GitHub</a>
-                    <a href="mailto:your-email@example.com">Email</a>
+                    <a href="mailto:melaku.tilahun.dev@gmail.com">Email</a>
                 </div>
             </div>
         </section>

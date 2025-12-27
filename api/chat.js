@@ -26,11 +26,7 @@ export default async function handler(req, res) {
 
     // Initialize Gemini
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    // User requested "latest mode", trying gemini-1.5-pro which is stable but smarter or 3-preview
-    // Let's stick to 1.5-flash for pure stability or 1.5-pro for "smarter"
-    // Going with 1.5-flash to be 100% safe as 3-preview failed before
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-
+    
     // System context about the portfolio
     const systemContext = `You are an AI assistant for Melaku Tilahun's portfolio website.
 

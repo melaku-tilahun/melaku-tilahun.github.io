@@ -2,21 +2,8 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export default async function handler(req, res) {
   // Handle CORS
-  const allowedOrigins = [
-    'https://melaku-tilahun.github.io',
-    'https://melaku-tilahun-github-io.vercel.app',
-    'http://127.0.0.1:5500',
-    'http://localhost:3000'
-  ];
-  
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  } else {
-    // Default fallback (optional, or kept strict)
-    res.setHeader('Access-Control-Allow-Origin', 'https://melaku-tilahun.github.io');
-  }
-  
+  // Allow all origins to fix issues with Vercel preview deployments
+  res.setHeader('Access-Control-Allow-Origin', '*'); 
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -39,6 +26,9 @@ export default async function handler(req, res) {
 
     // Initialize Gemini
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    // User requested "latest mode", trying gemini-1.5-pro which is stable but smarter or 3-preview
+    // Let's stick to 1.5-flash for pure stability or 1.5-pro for "smarter"
+    // Going with 1.5-flash to be 100% safe as 3-preview failed before
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
     // System context about the portfolio

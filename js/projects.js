@@ -40,14 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 4,
-      title: 'Polio Awareness Chatbot',
-      description: 'Public health AI agent deployed to support national immunization initiatives. Designed for high-concurrency interaction to disseminate critical health information effectively.',
+      title: 'Yango Driver - FinTech Portal',
+      description: 'High-scale driver operations system for Yango Ride. Engineered the complete financial reconciliation engine and driver onboarding workflow. Features real-time payment processing, automated commission splitting, and a high-frequency transaction ledger handling thousands of concurrent daily payouts.',
       image: 'assets/images/placeholder.jpg',
-      tags: ['HealthTech', 'Public Sector', 'AI Agents', 'Python'],
-      category: 'ai-ml',
+      tags: ['FinTech', 'Microservices', 'Payment Gateway', 'Node.js'],
+      category: 'tools',
       github: '#',
       demo: '#',
-      featured: false
+      featured: true
     },
     {
       id: 5,

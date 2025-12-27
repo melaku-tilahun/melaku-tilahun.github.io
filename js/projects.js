@@ -134,6 +134,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial render
   renderProjects();
   
+  // Check for URL params (for chatbot navigation)
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialFilter = urlParams.get('filter');
+  if (initialFilter) {
+    const filterBtn = document.querySelector(`[data-filter="${initialFilter}"]`);
+    if (filterBtn) {
+      setTimeout(() => filterBtn.click(), 500); // Small delay to ensure loaded
+    }
+  }
+  
   // Search functionality
   const searchInput = document.getElementById('project-search');
   

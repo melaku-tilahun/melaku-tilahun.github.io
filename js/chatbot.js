@@ -129,20 +129,21 @@ class PortfolioChatbot {
         body: JSON.stringify({ message })
       });
       
-      if (!response.ok) {
-        throw new Error('Failed to get response');
-      }
+      if (!response.ok) throw new Error('Failed to get response');
       
       const data = await response.json();
-      
-      // Hide typing indicator
       this.hideTypingIndicator();
       
-      // Add assistant message
-      if (data.success && data.response) {
-        this.addMessage(data.response, 'assistant');
+      if (data.success) {
+        // Add assistant response
+        this.addMessage(data.response, 'assistant', data.suggestions);
+        
+        // Handle actions
+        if (data.actions && data.actions.length > 0) {
+          this.handleActions(data.actions);
+        }
       } else {
-        this.addMessage('Sorry, I encountered an error. Please try again.', 'assistant');
+        this.addMessage('Sorry, I encountered an error.', 'assistant');
       }
       
     } catch (error) {
@@ -151,18 +152,70 @@ class PortfolioChatbot {
       this.addMessage('Sorry, I\'m having trouble connecting. Please try again later.', 'assistant');
     }
   }
+
+  handleActions(actions) {
+    actions.forEach(action => {
+      // Delay actions slightly for better UX
+      setTimeout(() => {
+        switch (action.type) {
+          case 'NAVIGATE':
+            if (action.payload.url) {
+              // If it's the same page, just reload/do nothing specific unless there's a filter
+              if (window.location.pathname.endsWith(action.payload.url)) {
+                 if(action.payload.filter) this.applyFilter(action.payload.filter);
+              } else {
+                window.location.href = action.payload.url + (action.payload.filter ? `?filter=${action.payload.filter}` : '');
+              }
+            }
+            break;
+            
+          case 'SCROLL_TO':
+            const element = document.getElementById(action.payload.id);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+            break;
+            
+          case 'OPEN_LINK':
+            window.open(action.payload.url, '_blank');
+            break;
+        }
+      }, 800);
+    });
+  }
   
-  addMessage(text, sender) {
+  applyFilter(filter) {
+    // Check if we are on projects page and have functionality
+    const filterBtn = document.querySelector(`[data-filter="${filter}"]`);
+    if(filterBtn) filterBtn.click();
+  }
+  
+  addMessage(text, sender, suggestions = null) {
     const messagesContainer = document.getElementById('chatMessages');
     const messageTime = new Date().toLocaleTimeString('en-US', { 
       hour: '2-digit', 
       minute: '2-digit' 
     });
     
+    let suggestionsHTML = '';
+    if (suggestions && suggestions.length > 0) {
+      suggestionsHTML = `
+        <div class="suggestion-chips" style="justify-content: flex-start; margin-top: 8px;">
+          ${suggestions.map(s => 
+            `<button class="suggestion-chip" onclick="document.querySelector('.chat-input').value='${s.query}'; document.getElementById('chatSend').click();">${s.label}</button>`
+          ).join('')}
+        </div>
+      `;
+    }
+
     const messageHTML = `
       <div class="chat-message ${sender}">
-        <div class="message-bubble">
-          ${this.escapeHtml(text)}
+        <div class="message-content-wrapper">
+          <div class="message-bubble">
+            ${this.escapeHtml(text)}
+          </div>
+          ${suggestionsHTML}
+          <div class="message-time">${messageTime}</div>
         </div>
       </div>
     `;

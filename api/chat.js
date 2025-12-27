@@ -59,14 +59,40 @@ Instructions:
 
 User Question: ${message}
 
-Provide a brief, helpful response:`;
+IMPORTANT: You must return a JSON object (no markdown formatting, just raw JSON).
+Structure:
+{
+  "text": "Your conversational response here (keep it brief and helpful)",
+  "actions": [
+    { "type": "NAVIGATE", "payload": { "url": "projects.html", "filter": "ai-ml" } }, // Optional
+    { "type": "SCROLL_TO", "payload": { "id": "contact" } } // Optional
+  ],
+  "suggestions": [
+    { "label": "See AI Projects", "query": "Show me AI projects" },
+    { "label": "Contact Info", "query": "How do I contact Melaku?" }
+  ]
+}
+
+Available Actions:
+- NAVIGATE: { "url": "relative_or_absolute_url", "filter": "optional_category_id" }
+- SCROLL_TO: { "id": "section_id" }
+- OPEN_LINK: { "url": "external_url" }
+
+Start JSON response:`;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    const text = response.text();
+    let text = response.text();
+    
+    // Clean up if the model adds markdown code blocks
+    text = text.replace(/```json/g, '').replace(/```/g, '').trim();
+
+    const parsedResponse = JSON.parse(text);
 
     return res.status(200).json({ 
-      response: text,
+      response: parsedResponse.text,
+      actions: parsedResponse.actions,
+      suggestions: parsedResponse.suggestions,
       success: true 
     });
 

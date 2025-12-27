@@ -292,16 +292,20 @@
 @media (max-width: 768px) {
   .chat-window {
     position: fixed;
-    bottom: 0;
-    right: 0;
+    top: 0;
     left: 0;
-    top: 0; /* Full screen */
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%; /* Force full height */
-    max-height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height for mobile browsers */
+    max-height: 100dvh;
     border-radius: 0;
-    transform: translateY(110%); /* Slide form bottom */
-    z-index: 2000; /* Higher than nav */
+    transform: translateY(110%);
+    z-index: 9999;
+    
+    /* Flex layout for stability */
+    display: flex;
+    flex-direction: column;
   }
   
   .chat-window.active {
@@ -309,22 +313,26 @@
   }
   
   .chat-header {
+    flex-shrink: 0; /* Keep header fixed size */
     padding: var(--space-4);
     height: 60px;
   }
   
   .chat-messages {
-    height: calc(100% - 130px); /* Adjust for header + input */
+    flex: 1; /* Take remaining space */
+    height: auto;
+    overflow-y: auto;
     padding-bottom: 20px;
   }
   
+  /* Remove absolute positioning for input */
   .chat-input-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: relative;
+    flex-shrink: 0; /* Don't shrink input area */
     width: 100%;
     background: white;
     padding: var(--space-3);
+    padding-bottom: max(var(--space-3), env(safe-area-inset-bottom)); /* iOS safe area */
   }
   
   .chat-button {
@@ -333,7 +341,6 @@
     width: 56px;
     height: 56px;
     font-size: 22px;
-    /* Ensure it's above other elements but below open chat */
     z-index: 1000; 
   }
   
@@ -343,7 +350,7 @@
   }
   
   .suggestion-chip {
-    padding: 8px 12px;
+    padding: 10px 14px; /* Larger touch target */
     font-size: 14px;
   }
 }

@@ -160,11 +160,27 @@ class PortfolioChatbot {
         switch (action.type) {
           case 'NAVIGATE':
             if (action.payload.url) {
-              // If it's the same page, just reload/do nothing specific unless there's a filter
-              if (window.location.pathname.endsWith(action.payload.url)) {
-                 if(action.payload.filter) this.applyFilter(action.payload.filter);
+              const targetUrl = action.payload.url;
+              const currentPath = window.location.pathname;
+              
+              // More robust check: does current path end with target URL?
+              // Handles cases like /repo/projects.html vs /projects.html
+              const isSamePage = currentPath.endsWith(targetUrl) || 
+                                (targetUrl === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('index.html')));
+
+              if (isSamePage) {
+                 // Already on page, just apply filter if needed
+                 if(action.payload.filter) {
+                   this.applyFilter(action.payload.filter);
+                 } else {
+                   // Optional: Scroll to top if just navigating to same page
+                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                 }
               } else {
-                window.location.href = action.payload.url + (action.payload.filter ? `?filter=${action.payload.filter}` : '');
+                // Navigate to new page
+                // Construct URL to ensure it works on GitHub Pages (relative paths)
+                const newUrl = targetUrl + (action.payload.filter ? `?filter=${action.payload.filter}` : '');
+                window.location.href = newUrl;
               }
             }
             break;
@@ -172,7 +188,13 @@ class PortfolioChatbot {
           case 'SCROLL_TO':
             const element = document.getElementById(action.payload.id);
             if (element) {
-              element.scrollIntoView({ behavior: 'smooth' });
+              // Close chat on mobile before scrolling/showing content
+              if (window.innerWidth <= 768) {
+                this.toggleChat();
+              }
+              setTimeout(() => {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 300);
             }
             break;
             

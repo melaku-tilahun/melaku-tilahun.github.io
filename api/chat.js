@@ -88,10 +88,9 @@ Start JSON response:`;
     // Note: genAI was already initialized above (lines 28 or similar). 
     // We should NOT redeclare it.
     
-    // STRICTLY use the LATEST available preview model
-    // User asked for "gemini-3", but the actual latest public experimental model is "gemini-2.0-flash-exp"
-    // Using this ensures it works while still being "the new model".
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+    // REVERTING TO STABLE: Experimental models (2.0/3.0) are failing (500 Error).
+    // Using Gemini 1.5 Pro (High Intelligence, Stable) to ensure functionality.
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
 
     let result;
     try {

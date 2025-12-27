@@ -73,6 +73,28 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 7,
+      title: 'ClariMind',
+      description: 'A data analysis platform that processes raw data from PDFs, Excel, Word docs, and other formats to perform data analysis, annotation, cleaning, structuring, and comprehensive analysis.',
+      image: 'assets/images/placeholder.jpg',
+      tags: ['Python', 'Data Analysis', 'ML', 'PDF Processing'],
+      category: 'ai-ml',
+      github: '#',
+      demo: '#',
+      featured: false
+    },
+    {
+      id: 8,
+      title: 'Agri-Chain-ET',
+      description: 'A minimal proof-of-concept blockchain dApp combining static web frontend with Solidity smart contracts (Hardhat) and Supabase. Users can create agricultural batches, write on-chain hashes for integrity, store JSON off-chain, generate QR codes, and trace batch history.',
+      image: 'assets/images/placeholder.jpg',
+      tags: ['Solidity', 'Web3', 'Supabase', 'Hardhat'],
+      category: 'tools',
+      github: '#',
+      demo: '#',
+      featured: false
+    },
+    {
+      id: 9,
       title: 'Web Exploitation Framework',
       description: 'A modular, Metasploit-inspired penetration testing framework focused on OWASP Top 10 web vulnerabilities.',
       image: 'assets/images/placeholder.jpg',

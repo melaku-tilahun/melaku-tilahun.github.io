@@ -85,9 +85,11 @@ Available Actions:
 Start JSON response:`;
 
     // Initialize Gemini
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    // Note: genAI was already initialized above (lines 28 or similar). 
+    // We should NOT redeclare it.
     
     // STRICTLY use gemini-3-flash-preview as requested
+    // Ensure we use the existing genAI instance.
     const model = genAI.getGenerativeModel({ model: 'gemini-3-flash-preview' });
 
     let result;

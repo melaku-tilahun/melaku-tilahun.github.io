@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from "@google/genai";
 
 export default async function handler(req, res) {
   // Handle CORS - Emergency permissive mode
@@ -23,8 +23,11 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Message is required' });
     }
 
-    // Initialize Gemini
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    // Initialize New Gemini SDK
+    // note: constructor is GoogleGenAI({ key: ... }) or just ({}) if relying on env var?
+    // User snippet showed: const ai = new GoogleGenAI({});
+    // We explicitly pass key to be safe.
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     
     // System context about the portfolio
     const systemContext = `You are an AI assistant for Melaku Tilahun's portfolio website.
@@ -44,7 +47,7 @@ Key Projects:
 1. Fayda SDK - Secure Node.js SDK for Ethiopia's National ID integration via MOSIP eSignet OIDC
 2. ClariMind - Data analysis platform for PDFs, Excel, and Word docs with ML-powered analysis
 3. Agri-Chain-ET - Blockchain dApp for agricultural batch tracking with Solidity and Supabase
-4. Polio Awareness Chatbot - AI chatbot for public health education
+4. Yango Driver - FinTech Portal for high-scale driver operations
 5. JU-SRH AI Health Chatbot - Confidential sexual & reproductive health chatbot for students
 
 Contact:
@@ -84,30 +87,18 @@ Available Actions:
 
 Start JSON response:`;
 
-    // Initialize Gemini
-    // Note: genAI was already initialized above (lines 28 or similar). 
-    // We should NOT redeclare it.
-    
-    // REVERTING TO STABLE: Experimental models (2.0/3.0) are failing (500 Error).
-    // Using Gemini 1.5 Pro (High Intelligence, Stable) to ensure functionality.
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
+    // STRICTLY use the user-provided model name with new SDK
+    const response = await ai.models.generateContent({
+      model: "gemini-3-pro-preview",
+      contents: prompt,
+    });
 
-    let result;
-    try {
-      result = await model.generateContent(prompt);
-    } catch (modelError) {
-      console.error("Gemini Model Error:", modelError);
-      // Return the specific error to the client instead of generic 500
-      return res.status(500).json({ 
-        error: `Model Generation Failed: ${modelError.message}`,
-        success: false 
-      });
-    }
-    const response = await result.response;
-    let text = response.text();
+    let text = response.text;
     
     // Clean up if the model adds markdown code blocks
-    text = text.replace(/```json/g, '').replace(/```/g, '').trim();
+    if (text) {
+        text = text.replace(/```json/g, '').replace(/```/g, '').trim();
+    }
 
     let parsedResponse;
     try {
@@ -132,7 +123,7 @@ Start JSON response:`;
   } catch (error) {
     console.error('Chatbot error:', error);
     return res.status(500).json({ 
-      error: 'Failed to generate response',
+      error: `Failed to generate response: ${error.message}`,
       success: false 
     });
   }

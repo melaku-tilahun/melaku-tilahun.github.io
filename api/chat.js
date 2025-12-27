@@ -11,7 +11,16 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
-  // Only allow POST requests
+  // Handle GET request for health check (prevents 405 when user clicks link)
+  if (req.method === 'GET') {
+    return res.status(200).json({ 
+      status: 'Online', 
+      message: 'Chatbot API is running ready for POST requests',
+      model_config: 'gemini-3-pro-preview'
+    });
+  }
+
+  // Only allow POST requests for chat interactions
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }

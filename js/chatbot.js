@@ -4,7 +4,7 @@
 
 class PortfolioChatbot {
   constructor() {
-    this.apiEndpoint = 'https://YOUR_VERCEL_URL.vercel.app/api/chat'; // Update this after Vercel deployment
+    this.apiEndpoint = 'https://melaku-tilahun-github-io.vercel.app/api/chat';
     this.messages = [];
     this.isOpen = false;
     this.isTyping = false;

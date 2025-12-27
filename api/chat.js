@@ -86,17 +86,22 @@ Available Actions:
 Start JSON response:`;
 
     // Initialize Gemini
-    // Note: genAI was already initialized above line 28, so we reuse it or ensure only one exists.
-    // However, looking at the previous file state, it seems I paste-replaced a block but might have left an earlier decl.
-    // Safer approach: Use the existing instance if possible, or re-structure.
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     
-    // START FIX: 
-    // We will just use the `genAI` instance created at the top of the try block (around line 28/29).
-    // So we just need to get the model.
-    
+    // STRICTLY use gemini-3-flash-preview as requested
     const model = genAI.getGenerativeModel({ model: 'gemini-3-flash-preview' });
 
-    const result = await model.generateContent(prompt);
+    let result;
+    try {
+      result = await model.generateContent(prompt);
+    } catch (modelError) {
+      console.error("Gemini Model Error:", modelError);
+      // Return the specific error to the client instead of generic 500
+      return res.status(500).json({ 
+        error: `Model Generation Failed: ${modelError.message}`,
+        success: false 
+      });
+    }
     const response = await result.response;
     let text = response.text();
     

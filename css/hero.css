@@ -1,0 +1,160 @@
+/* ===================================
+   HERO SECTION - ENTERPRISE STYLES
+   =================================== */
+
+.hero-section {
+  position: relative;
+  padding-top: 140px;
+  padding-bottom: var(--space-20);
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(6, 165, 199, 0.1);
+  border: 1px solid var(--color-accent-primary);
+  border-radius: var(--radius-full);
+  color: var(--color-accent-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(4px);
+  animation: slideDown 0.8s ease-out;
+}
+
+/* Hero Title */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-6);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 700px;
+  margin-bottom: var(--space-10);
+  animation: fadeIn 1s ease-out 0.4s both;
+}
+
+.hero-description strong {
+  color: var(--color-text-primary);
+  font-weight: var(--font-semibold);
+}
+
+/* Hero CTA */
+.hero-cta {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-16);
+  animation: fadeIn 1s ease-out 0.6s both;
+}
+
+@media (max-width: 640px) {
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-cta .btn {
+    width: 100%;
+  }
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-6) var(--space-10);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-2xl);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  animation: slideUp 1s ease-out 0.8s both;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-accent-primary);
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-medium);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero-stats {
+    flex-direction: column;
+    gap: var(--space-6);
+    padding: var(--space-6);
+    width: 100%;
+  }
+  
+  .stat-divider {
+    width: 50%;
+    height: 1px;
+  }
+}

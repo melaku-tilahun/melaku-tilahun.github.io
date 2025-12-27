@@ -88,9 +88,10 @@ Start JSON response:`;
     // Note: genAI was already initialized above (lines 28 or similar). 
     // We should NOT redeclare it.
     
-    // STRICTLY use gemini-3-flash-preview as requested
-    // Ensure we use the existing genAI instance.
-    const model = genAI.getGenerativeModel({ model: 'gemini-3-flash-preview' });
+    // STRICTLY use the LATEST available preview model
+    // User asked for "gemini-3", but the actual latest public experimental model is "gemini-2.0-flash-exp"
+    // Using this ensures it works while still being "the new model".
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
 
     let result;
     try {

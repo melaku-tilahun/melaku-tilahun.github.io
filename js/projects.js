@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'assets/images/placeholder.jpg',
       tags: ['Web3', 'Supply Chain', 'Solidity', 'Smart Contracts'],
       category: 'tools',
-      github: '#',
+      github: 'https://github.com/melaku-tilahun/agri-chain-et',
       demo: '#',
       featured: true
     },
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'assets/images/placeholder.jpg',
       tags: ['FinTech', 'Microservices', 'Payment Gateway', 'Node.js'],
       category: 'tools',
-      github: '#',
+      github: 'https://github.com/melaku-tilahun/g2g-bonus-payment',
       demo: '#',
       featured: true
     },

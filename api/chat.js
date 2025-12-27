@@ -1,15 +1,34 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export default async function handler(req, res) {
+  // Handle CORS
+  const allowedOrigins = [
+    'https://melaku-tilahun.github.io',
+    'https://melaku-tilahun-github-io.vercel.app',
+    'http://127.0.0.1:5500',
+    'http://localhost:3000'
+  ];
+  
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    // Default fallback (optional, or kept strict)
+    res.setHeader('Access-Control-Allow-Origin', 'https://melaku-tilahun.github.io');
+  }
+  
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
-
-  // CORS headers for your domain
-  res.setHeader('Access-Control-Allow-Origin', 'https://melaku-tilahun.github.io');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   try {
     const { message } = req.body;

@@ -85,7 +85,27 @@ Available Actions:
 
 Start JSON response:`;
 
-    const result = await model.generateContent(prompt);
+    let result;
+    try {
+      // Attempt 1: Gemini 2.0 Flash Experimental (User's request)
+      console.log("Attempting Gemini 2.0 Flash Exp...");
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+      result = await model.generateContent(prompt);
+    } catch (error) {
+      console.warn("Gemini 2.0 failed, falling back to 1.5 Pro:", error.message);
+      
+      try {
+        // Attempt 2: Gemini 1.5 Pro (Smarter stable)
+        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
+        result = await model.generateContent(prompt);
+      } catch (error) {
+        console.warn("Gemini 1.5 Pro failed, falling back to 1.5 Flash:", error.message);
+        
+        // Attempt 3: Gemini 1.5 Flash (Most Stable)
+        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+        result = await model.generateContent(prompt);
+      }
+    }
     const response = await result.response;
     let text = response.text();
     

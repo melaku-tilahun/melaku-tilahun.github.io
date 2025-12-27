@@ -106,12 +106,23 @@ Start JSON response:`;
     // Clean up if the model adds markdown code blocks
     text = text.replace(/```json/g, '').replace(/```/g, '').trim();
 
-    const parsedResponse = JSON.parse(text);
+    let parsedResponse;
+    try {
+      parsedResponse = JSON.parse(text);
+    } catch (e) {
+      console.error("Failed to parse JSON response:", text);
+      // Fallback if model returns plain text instead of JSON
+      parsedResponse = {
+        text: text, // Use the raw text as the response
+        actions: [],
+        suggestions: []
+      };
+    }
 
     return res.status(200).json({ 
-      response: parsedResponse.text,
-      actions: parsedResponse.actions,
-      suggestions: parsedResponse.suggestions,
+      response: parsedResponse.text || text, // Fallback to text if property missing
+      actions: parsedResponse.actions || [],
+      suggestions: parsedResponse.suggestions || [],
       success: true 
     });
 

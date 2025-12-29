@@ -21,13 +21,21 @@ class PortfolioChatbot {
     const chatHTML = `
       <!-- Chat Button -->
       <button class="chat-button" id="chatButton" aria-label="Open chat">
-        <i class="fas fa-comments"></i>
+        <i class="fas fa-sparkles"></i>
       </button>
       
       <!-- Chat Window -->
       <div class="chat-window" id="chatWindow">
         <div class="chat-header">
-          <h3>Chat with Melaku</h3>
+          <div class="chat-title-wrapper">
+             <div class="avatar-circle">
+               <i class="fas fa-user"></i>
+             </div>
+             <div>
+               <h3>Chatbot</h3>
+               <span class="status-text">Online</span>
+             </div>
+          </div>
           <button class="chat-close" id="chatClose" aria-label="Close chat">
             <i class="fas fa-times"></i>
           </button>
@@ -35,12 +43,11 @@ class PortfolioChatbot {
         
         <div class="chat-messages" id="chatMessages">
           <div class="chat-welcome">
-            <h4>👋 Hi! I'm Melaku's AI assistant</h4>
-            <p>Ask me about skills, projects, or experience!</p>
+            <p class="welcome-text">Hello! I can answer questions about Melaku's work & experience.</p>
             <div class="suggestion-chips">
-              <button class="suggestion-chip" data-suggestion="Tell me about your projects">Your projects</button>
-              <button class="suggestion-chip" data-suggestion="What are your main skills?">Your skills</button>
-              <button class="suggestion-chip" data-suggestion="How can I contact you?">Contact info</button>
+              <button class="suggestion-chip" data-suggestion="Tell me about your projects">Projects</button>
+              <button class="suggestion-chip" data-suggestion="What are your main skills?">Skills</button>
+              <button class="suggestion-chip" data-suggestion="How can I contact you?">Contact</button>
             </div>
           </div>
         </div>
@@ -51,11 +58,11 @@ class PortfolioChatbot {
               type="text" 
               class="chat-input" 
               id="chatInput" 
-              placeholder="Ask me anything..."
+              placeholder="Type a message..."
               maxlength="500"
             >
             <button class="chat-send" id="chatSend" aria-label="Send message">
-              <i class="fas fa-paper-plane"></i>
+              <i class="fas fa-arrow-up"></i>
             </button>
           </div>
         </div>

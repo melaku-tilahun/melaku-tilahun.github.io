@@ -21,7 +21,7 @@ class PortfolioChatbot {
     const chatHTML = `
       <!-- Chat Button -->
       <button class="chat-button" id="chatButton" aria-label="Open chat">
-        <i class="fas fa-sparkles"></i>
+        <i class="fas fa-comment-dots"></i>
       </button>
       
       <!-- Chat Window -->

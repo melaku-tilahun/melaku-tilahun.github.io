@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ 
       status: 'Online', 
       message: 'Chatbot API is running ready for POST requests',
-      model_config: 'gemini-3-flash-preview'
+      model_config: 'gemini-2.0-flash-lite-preview-02-05'
     });
   }
 
@@ -98,7 +98,7 @@ Start JSON response:`;
 
     // STRICTLY use the user-provided model name with new SDK
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-2.0-flash-lite-preview-02-05",
       contents: prompt,
     });
 

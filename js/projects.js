@@ -38,17 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
       demo: '#',
       featured: true
     },
-    {
-      id: 4,
-      title: 'Yango Driver - FinTech Portal',
-      description: 'High-scale driver operations system for Yango Ride. Engineered the complete financial reconciliation engine and driver onboarding workflow. Features real-time payment processing, automated commission splitting, and a high-frequency transaction ledger handling thousands of concurrent daily payouts.',
-      image: 'assets/images/placeholder.jpg',
-      tags: ['FinTech', 'Microservices', 'Payment Gateway', 'Node.js'],
-      category: 'tools',
-      github: 'https://github.com/melaku-tilahun/g2g-bonus-payment',
-      demo: '#',
-      featured: true
-    },
+    // {
+    //   id: 4,
+    //   title: 'Yango Driver - FinTech Portal',
+    //   description: 'High-scale driver operations system for Yango Ride. Engineered the complete financial reconciliation engine and driver onboarding workflow. Features real-time payment processing, automated commission splitting, and a high-frequency transaction ledger handling thousands of concurrent daily payouts.',
+    //   image: 'assets/images/placeholder.jpg',
+    //   tags: ['FinTech', 'Microservices', 'Payment Gateway', 'Node.js'],
+    //   category: 'tools',
+    //   github: 'https://github.com/melaku-tilahun/g2g-bonus-payment',
+    //   demo: '#',
+    //   featured: true
+    // },
     {
       id: 5,
       title: 'JU-SRH - AI Health Chatbot',
